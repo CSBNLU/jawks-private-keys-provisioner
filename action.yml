@@ -21,11 +21,12 @@ inputs:
     required: true
 runs:
   using: "composite"
-  shell: bash
   steps:
     - uses: oven-sh/setup-bun@v2
+      shell: bash
     - name: "Install dependencies"
+      shell: bash
       run: bun install
-
     - name: "Run script with Bun"
+      shell: bash
       run: bun ./src/private-keys-provisioner/provision-secrets.ts
