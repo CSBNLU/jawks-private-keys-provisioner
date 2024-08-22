@@ -27,4 +27,4 @@ runs:
       run: bun install
 
     - name: "Run script with Bun"
-      run: bun ./dist/index.js
+      run: bun ./src/private-keys-provisioner/provision-secrets.ts
