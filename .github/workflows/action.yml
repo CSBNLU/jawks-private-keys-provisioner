@@ -1,0 +1,30 @@
+name: "JAWKS - JWT Keypairs Provisioner"
+description: "A GitHub Action used for provisioning JWT keypairs for the JWKS infrastructure deployed using JAWKS."
+inputs:
+  accessTokenSecretARN:
+    description: "ARN of the access token secret."
+    required: true
+  refreshTokenSecretARN:
+    description: "ARN of the refresh token secret."
+    required: true
+  kidVersionStagePrefix:
+    description: "Prefix for the KID version stage."
+    required: true
+  kidVersionStagePrefixSeparator:
+    description: "Separator for the KID version stage prefix."
+    required: true
+  region:
+    description: "AWS region where resources are deployed."
+    required: true
+  jwksTableName:
+    description: "Name of the JWKS table."
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: oven-sh/setup-bun@v2
+    - name: "Install dependencies"
+      run: bun install
+
+    - name: "Run script with Bun"
+      run: bun ./dist/index.js
