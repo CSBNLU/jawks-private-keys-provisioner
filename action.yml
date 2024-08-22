@@ -21,6 +21,7 @@ inputs:
     required: true
 runs:
   using: "composite"
+  shell: bash
   steps:
     - uses: oven-sh/setup-bun@v2
     - name: "Install dependencies"
