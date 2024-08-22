@@ -1,1 +1,1 @@
-export * as jwksFactory from './jwks-factory-implementation';
+export * as jwksFactory from "./jwks-factory-implementation";

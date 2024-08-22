@@ -1,2 +1,2 @@
-export * from './jwks-factory';
-export * from './key';
+export * from "./jwks-factory";
+export * from "./key";

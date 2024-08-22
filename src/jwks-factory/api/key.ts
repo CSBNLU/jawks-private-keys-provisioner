@@ -1,8 +1,8 @@
-import { JWK } from 'jose';
+import { JWK } from "jose";
 
 export interface Key {
-	keyID: string;
-	jwk: JWK;
-	publicKey: string;
-	privateKey: string;
+  keyID: string;
+  jwk: JWK;
+  publicKey: string;
+  privateKey: string;
 }

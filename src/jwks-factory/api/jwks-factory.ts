@@ -1,8 +1,8 @@
-import { Key } from './key';
+import { Key } from "./key";
 
 export interface JWKSFactory {
-	create: () => Promise<{
-		accessToken: Key,
-		refreshToken: Key,
-	}>
+  create: () => Promise<{
+    accessToken: Key;
+    refreshToken: Key;
+  }>;
 }
