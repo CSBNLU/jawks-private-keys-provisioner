@@ -34,12 +34,15 @@ const environmentConfigSchema = z.object({
   kidVersionStagePrefixSeparator: z.string(),
   region: z.string(),
   jwksTableName: z.string(),
-  privateKeysRefreshIntervalInDays: z.string().optional().transform((value) => {
-    if (value === undefined) {
-      return undefined;
-    }
-    return parseInt(value);
-  }),
+  privateKeysRefreshIntervalInDays: z
+    .string()
+    .optional()
+    .transform((value) => {
+      if (value === undefined) {
+        return undefined;
+      }
+      return parseInt(value);
+    }),
 });
 
 const rawEnvironmentConfig: RawEnvironmentConfig = {
