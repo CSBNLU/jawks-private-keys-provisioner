@@ -29,3 +29,11 @@ runs:
     - name: "Run script with Bun"
       shell: bash
       run: bun ./src/private-keys-provisioner/provision-secrets.ts
+      env:
+        ACCESS_TOKEN_SECRET_ARN: ${{ inputs.accessTokenSecretARN }}
+        REFRESH_TOKEN_SECRET_ARN: ${{ inputs.refreshTokenSecretARN }}
+        KID_VERSION_STAGE_PREFIX: ${{ inputs.kidVersionStagePrefix }}
+        KID_VERSION_STAGE_PREFIX_SEPARATOR: ${{ inputs.kidVersionStagePrefixSeparator }}
+        REGION: ${{ inputs.region }}
+        JWKS_TABLE_NAME: ${{ inputs.jwksTableName }}
+

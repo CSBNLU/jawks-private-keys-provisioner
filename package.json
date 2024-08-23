@@ -1,8 +1,9 @@
 {
   "name": "@csbnlu/jawks-private-keys-provisioner",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.143",
+    "@types/node": "^22.5.0",
     "prettier": "^3.3.3"
   },
   "dependencies": {
@@ -14,11 +15,9 @@
     "jose": "^5.7.0",
     "zod": "^3.23.8"
   },
-  "scripts": {
-    "provision": "bun ./src/private-keys-provisioner/provision-secrets.ts"
-  },
   "files": [
     "/src"
   ],
+  "main": "dist/index.js",
   "license": "AGPL-3.0-or-later"
 }
