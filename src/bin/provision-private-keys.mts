@@ -5,7 +5,7 @@ import { z } from "zod";
 
 const constants = Object.freeze({
   defaultPrivateKeysRefreshIntervalInDays: 200,
-})
+});
 interface EnvironmentConfig {
   accessTokenSecretARN: string;
   refreshTokenSecretARN: string;
@@ -34,7 +34,8 @@ const rawEnvironmentConfig: EnvironmentConfig = {
     .KID_VERSION_STAGE_PREFIX_SEPARATOR as string,
   region: process.env.REGION as string,
   jwksTableName: process.env.TABLE_NAME as string,
-  privateKeysRefreshIntervalInDays: process.env.PRIVATE_KEYS_REFRESH_INTERVAL_IN_DAYS as number | undefined,
+  privateKeysRefreshIntervalInDays: process.env
+    .PRIVATE_KEYS_REFRESH_INTERVAL_IN_DAYS as number | undefined,
 };
 
 const environmentConfig: EnvironmentConfig =
@@ -46,8 +47,11 @@ const secretsProvisioner = Bindings.create({
   jwksTableName: environmentConfig.jwksTableName,
 })({
   kidVersionStagePrefix: environmentConfig.kidVersionStagePrefix,
-  kidVersionStagePrefixSeparator: environmentConfig.kidVersionStagePrefixSeparator,
-  privateKeysRefreshIntervalInDays: environmentConfig.privateKeysRefreshIntervalInDays ?? constants.defaultPrivateKeysRefreshIntervalInDays,
+  kidVersionStagePrefixSeparator:
+    environmentConfig.kidVersionStagePrefixSeparator,
+  privateKeysRefreshIntervalInDays:
+    environmentConfig.privateKeysRefreshIntervalInDays ??
+    constants.defaultPrivateKeysRefreshIntervalInDays,
   region: environmentConfig.region,
 });
 

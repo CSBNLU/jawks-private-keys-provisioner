@@ -26,8 +26,12 @@ export const create =
       refreshTokenPrivateKeySecretARN,
       jwksTableName: tableName,
     } = deps;
-    const { kidVersionStagePrefix, kidVersionStagePrefixSeparator, privateKeysRefreshIntervalInDays, region } =
-      props;
+    const {
+      kidVersionStagePrefix,
+      kidVersionStagePrefixSeparator,
+      privateKeysRefreshIntervalInDays,
+      region,
+    } = props;
 
     const jwksFactory = JWKSFactory.Bindings.create();
 

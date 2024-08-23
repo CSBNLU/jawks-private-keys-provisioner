@@ -21,7 +21,10 @@ export const create =
     return {
       retrieveLatestVersionCreationDate: async () => {
         try {
-          const { Versions: versions} = await secretsManager.listSecretVersionIds({ SecretId: privateKeySecretARN });
+          const { Versions: versions } =
+            await secretsManager.listSecretVersionIds({
+              SecretId: privateKeySecretARN,
+            });
           if (!versions) {
             return undefined;
           }
@@ -30,10 +33,12 @@ export const create =
             .filter((date) => date != undefined)
             .sort()
             .pop();
-  
-            return latestVersionCreationDate;
+
+          return latestVersionCreationDate;
         } catch (error) {
-          console.error(`Error retrieving latest version creation date: ${error}`);
+          console.error(
+            `Error retrieving latest version creation date: ${error}`,
+          );
           return undefined;
         }
       },
