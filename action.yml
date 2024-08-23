@@ -14,7 +14,7 @@ inputs:
     description: "Separator for the KID version stage prefix."
     required: true
   privateKeysRefreshIntervalInDays:
-    description: "Minimum interval in days for refreshing private keys (optional) (Default: 100)."
+    description: "Minimum interval in days for refreshing private keys (optional) (Default: 200)."
     required: false
   region:
     description: "AWS region where resources are deployed."
