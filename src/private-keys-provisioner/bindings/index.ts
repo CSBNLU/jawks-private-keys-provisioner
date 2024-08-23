@@ -14,6 +14,7 @@ export interface Dependencies {
 interface Props {
   kidVersionStagePrefix: string;
   kidVersionStagePrefixSeparator: string;
+  privateKeysRefreshIntervalInDays: number;
   region: string;
 }
 
@@ -25,7 +26,7 @@ export const create =
       refreshTokenPrivateKeySecretARN,
       jwksTableName: tableName,
     } = deps;
-    const { kidVersionStagePrefix, kidVersionStagePrefixSeparator, region } =
+    const { kidVersionStagePrefix, kidVersionStagePrefixSeparator, privateKeysRefreshIntervalInDays, region } =
       props;
 
     const jwksFactory = JWKSFactory.Bindings.create();
@@ -54,7 +55,7 @@ export const create =
       jwksFactory,
       jwksRepository,
       refreshTokenPrivateKeyStore,
-    });
+    })({ privateKeysRefreshIntervalInDays });
 
     return secretsProvisioner;
   };

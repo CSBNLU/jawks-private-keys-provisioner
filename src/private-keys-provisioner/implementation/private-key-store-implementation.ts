@@ -19,6 +19,24 @@ export const create =
       props;
     const secretsManager = new SecretsManager({ region: region });
     return {
+      retrieveLatestVersionCreationDate: async () => {
+        try {
+          const { Versions: versions} = await secretsManager.listSecretVersionIds({ SecretId: privateKeySecretARN });
+          if (!versions) {
+            return undefined;
+          }
+          const latestVersionCreationDate = versions
+            .map((version) => version.CreatedDate)
+            .filter((date) => date != undefined)
+            .sort()
+            .pop();
+  
+            return latestVersionCreationDate;
+        } catch (error) {
+          console.error(`Error retrieving latest version creation date: ${error}`);
+          return undefined;
+        }
+      },
       storeKey: async (props) => {
         const { privateKey, kid } = props;
         const versionStagePrefix = `${kidVersionStagePrefix}${kidVersionStagePrefixSeparator}`;

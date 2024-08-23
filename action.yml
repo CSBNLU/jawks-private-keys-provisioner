@@ -13,6 +13,9 @@ inputs:
   kidVersionStagePrefixSeparator:
     description: "Separator for the KID version stage prefix."
     required: true
+  privateKeysRefreshIntervalInDays:
+    description: "Minimum interval in days for refreshing private keys (optional) (Default: 100)."
+    required: false
   region:
     description: "AWS region where resources are deployed."
     required: true
@@ -31,5 +34,6 @@ runs:
         REFRESH_TOKEN_SECRET_ARN: ${{ inputs.refreshTokenSecretARN }}
         KID_VERSION_STAGE_PREFIX: ${{ inputs.kidVersionStagePrefix }}
         KID_VERSION_STAGE_PREFIX_SEPARATOR: ${{ inputs.kidVersionStagePrefixSeparator }}
+        PRIVATE_KEYS_REFRESH_INTERVAL_IN_DAYS: ${{ inputs.privateKeysRefreshIntervalInDays }}
         REGION: ${{ inputs.region }}
         TABLE_NAME: ${{ inputs.tableName }}
