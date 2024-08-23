@@ -16,7 +16,7 @@ inputs:
   region:
     description: "AWS region where resources are deployed."
     required: true
-  jwksTableName:
+  tableName:
     description: "Name of the JWKS table."
     required: true
 runs:
@@ -32,4 +32,4 @@ runs:
         KID_VERSION_STAGE_PREFIX: ${{ inputs.kidVersionStagePrefix }}
         KID_VERSION_STAGE_PREFIX_SEPARATOR: ${{ inputs.kidVersionStagePrefixSeparator }}
         REGION: ${{ inputs.region }}
-        JWKS_TABLE_NAME: ${{ inputs.jwksTableName }}
+        TABLE_NAME: ${{ inputs.tableName }}
