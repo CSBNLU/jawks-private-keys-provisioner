@@ -36,4 +36,3 @@ runs:
         KID_VERSION_STAGE_PREFIX_SEPARATOR: ${{ inputs.kidVersionStagePrefixSeparator }}
         REGION: ${{ inputs.region }}
         JWKS_TABLE_NAME: ${{ inputs.jwksTableName }}
-
