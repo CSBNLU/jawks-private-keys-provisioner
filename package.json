@@ -1,6 +1,6 @@
 {
   "name": "@csbnlu/jawks-private-keys-provisioner",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.143",
     "@types/node": "^22.5.0",
