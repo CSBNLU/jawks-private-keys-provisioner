@@ -22,7 +22,8 @@ jobs:
         with:
           node-version: 22
       - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn run tsc
+      - run: yarn run tsc -p tsconfig.json
+      - run: yarn run tsc -p tsconfig.bin.json
 
   publish-gpr:
     needs: build
@@ -37,7 +38,8 @@ jobs:
           node-version: 22
           registry-url: https://npm.pkg.github.com/
       - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn run tsc
+      - run: yarn run tsc -p tsconfig.json
+      - run: yarn run tsc -p tsconfig.bin.json
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -53,7 +55,8 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           scope: "@csbnlu"
       - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn run tsc
+      - run: yarn run tsc -p tsconfig.json
+      - run: yarn run tsc -p tsconfig.bin.json
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

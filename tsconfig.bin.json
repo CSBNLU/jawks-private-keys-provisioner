@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es2020",
+    "target": "ES2022",
     "declaration": true,
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -13,6 +14,6 @@
     "declarationMap": true
   },
   "files": [
-    "src/index.ts"
+    "src/bin/provision-private-keys.mts"
   ]
 }

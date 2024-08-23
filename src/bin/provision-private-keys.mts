@@ -1,4 +1,4 @@
-import { Bindings } from "./private-keys-provisioner/index.js";
+import { Bindings } from "../private-keys-provisioner/index.js";
 import { z } from "zod";
 
 interface EnvironmentConfig {
