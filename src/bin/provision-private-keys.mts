@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import { Bindings } from "../private-keys-provisioner/index.js";
 import { z } from "zod";
 

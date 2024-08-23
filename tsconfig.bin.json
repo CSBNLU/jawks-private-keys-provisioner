@@ -13,7 +13,5 @@
     "strict": true,
     "declarationMap": true
   },
-  "files": [
-    "src/bin/provision-private-keys.mts"
-  ]
+  "files": ["src/bin/provision-private-keys.mts"]
 }

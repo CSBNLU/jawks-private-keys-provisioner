@@ -28,7 +28,7 @@ runs:
       run: bun install
     - name: "Run script with Bun"
       shell: bash
-      run: bunx @csbnlu/jawks-private-keys-provisioner@0.0.9
+      run: bunx @csbnlu/jawks-private-keys-provisioner
       env:
         ACCESS_TOKEN_SECRET_ARN: ${{ inputs.accessTokenSecretARN }}
         REFRESH_TOKEN_SECRET_ARN: ${{ inputs.refreshTokenSecretARN }}
