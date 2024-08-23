@@ -41,7 +41,12 @@ const environmentConfigSchema = z.object({
       if (value === undefined) {
         return undefined;
       }
-      return parseInt(value);
+      const parsedValue = parseInt(value);
+      if (isNaN(parsedValue)) {
+        console.error("Invalid privateKeysRefreshIntervalInDays");
+        return undefined;
+      }
+      return parsedValue;
     }),
 });
 
