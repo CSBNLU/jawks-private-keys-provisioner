@@ -49,7 +49,8 @@ jobs:
       #     name: dist
       #     path: dist
       - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn run tsc
+      - run: yarn run tsc -p tsconfig.json
+      - run: yarn run tsc -p tsconfig.bin.json
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -70,7 +71,8 @@ jobs:
       #     name: dist
       #     path: dist
       - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn run tsc
+      - run: yarn run tsc -p tsconfig.json
+      - run: yarn run tsc -p tsconfig.bin.json
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
