@@ -1,6 +1,6 @@
 {
   "name": "@csbnlu/jawks-private-keys-provisioner",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.143",
     "@types/luxon": "^3.4.2",
@@ -23,6 +23,5 @@
   "bin": {
     "jawks-private-keys-provisioner": "dist/bin/provision-private-keys.mjs"
   },
-  "main": "dist/index.js",
   "license": "AGPL-3.0-or-later"
 }
