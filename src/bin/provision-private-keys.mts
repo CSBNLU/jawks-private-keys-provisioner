@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 
+import { inspect } from "util";
 import { Bindings } from "../private-keys-provisioner/index.js";
 import { z } from "zod";
 
@@ -64,6 +65,8 @@ const rawEnvironmentConfig: RawEnvironmentConfig = {
 
 const environmentConfig: EnvironmentConfig =
   environmentConfigSchema.parse(rawEnvironmentConfig);
+
+inspect(environmentConfig);
 
 const secretsProvisioner = Bindings.create({
   accessTokenPrivateKeySecretARN: environmentConfig.accessTokenSecretARN,
